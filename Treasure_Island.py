@@ -1,5 +1,4 @@
-#from asyncio import ensure_future
-
+#print(r''' ... ascii art ... ''')   # am scurtat să nu fie prea lung, dar tu îl păstrezi integral
 print(r'''
 *******************************************************************************
           |                   |                  |                     |
@@ -27,7 +26,8 @@ print("Your mission is to find the treasure.")
 
 end_game = 0    #Suppose that the game had not ended
 
-first_decision = input("What's your direction, left or right?\n")
+#.strip eliminate spaces before and after the word and .lower makes every letter in a small one(in C/C++ ch += 32)
+first_decision = input("What's your direction, left or right?\n").strip().lower()
 ok_first_direction = 0
 
 if first_decision == "left" or first_decision == "right":
@@ -35,7 +35,7 @@ if first_decision == "left" or first_decision == "right":
 
 while ok_first_direction == 0:
     if ok_first_direction == 0:
-        first_decision = input("You should enter a valid one, left or right!\n")
+        first_decision = input("You should enter a valid one, left or right!\n").strip().lower()
         if first_decision == "left" or first_decision == "right":
             ok_first_direction = 1
 
@@ -44,7 +44,7 @@ if first_decision == "right":
     end_game = 1        #We found that the game finished
 
 if end_game == 0:
-    second_decision = input("What are you doing, swim or wait?\n")
+    second_decision = input("What are you doing, swim or wait?\n").strip().lower()
     ok_second_decision = 0
 
     if second_decision == "swim" or second_decision == "wait":
@@ -52,7 +52,7 @@ if end_game == 0:
 
     while ok_second_decision == 0:
         if ok_second_decision == 0:
-            second_decision = input("You should enter a valid one, swim or wait!\n")
+            second_decision = input("You should enter a valid one, swim or wait!\n").strip().lower()
             if second_decision == "swim" or second_decision == "wait":
                 ok_second_decision = 1
 
@@ -61,7 +61,7 @@ if end_game == 0:
         end_game = 1
 
 if end_game == 0:
-    third_decision = input("wich door are you choosing, red, blue or yellow?\n")
+    third_decision = input("wich door are you choosing, red, blue or yellow?\n").strip().lower()
     ok_third_decision = 0
 
     if third_decision == "red" or third_decision == "blue" or third_decision == "yellow":
@@ -69,7 +69,7 @@ if end_game == 0:
 
     while ok_third_decision == 0:
         if ok_third_decision == 0:
-            third_decision = input("You should choose a valid one, red, blue or yellow!\n")
+            third_decision = input("You should choose a valid one, red, blue or yellow!\n").strip().lower()
             if third_decision == "red" or third_decision == "blue" or third_decision == "yellow":
                 ok_third_decision = 1
 
